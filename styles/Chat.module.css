@@ -36,7 +36,6 @@
 
 .message {
     padding: 10px;
-    font-size: 22px;
 }
 
 .form {
@@ -57,7 +56,6 @@
     border: 1px solid #ffffff;
     width: 100%;
     max-width: 450px;
-    font-size: 20px;
     outline: none;
 }
 
@@ -68,7 +66,6 @@
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 20px;
 }
 
 .back {

@@ -1,13 +1,12 @@
 import React from 'react';
 import styles from '../../styles/Dashboard.module.css';
-import Navbar from '@/components/Navbar';
 import Head from 'next/head';
 import Link from 'next/link';
-import { AuthContextProvider } from '/utils/AuthContext'
+import Navbar from '@/components/Navbar';
 
 const Dashboard = () => {
     return (
-        <AuthContextProvider>
+        <div>
             <div className={styles.dashboard}>
                 <Head>
                     <title>CeladonAI | Personalised ChatGPT for your brand</title>
@@ -16,7 +15,7 @@ const Dashboard = () => {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
 
-                <Navbar />
+                <Navbar/>
 
                 <h2 style={{ textAlign: "center", color: "grey" }}>Coming Soon</h2>
 
@@ -37,7 +36,7 @@ const Dashboard = () => {
                 </Link>
             </div> */}
             </div>
-        </AuthContextProvider>
+        </div>
     );
 };
 

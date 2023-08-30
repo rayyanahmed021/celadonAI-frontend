@@ -1,12 +1,21 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-import Navbar from '@/components/Navbar';
 import { AuthContextProvider } from '/utils/AuthContext'
 import UploadForm from '@/components/UploadForm';
+import { Noto_Sans } from 'next/font/google'
+import Navbar from '@/components/Navbar';
+
+// If loading a variable font, you don't need to specify the font weight
+const opensans = Noto_Sans({
+    weight: ['400', '700'],
+    style: ['normal', 'italic'],
+    subsets: ['latin'],
+    display: 'swap',
+})
 
 export default function Home() {
     return (
-        <AuthContextProvider>
+        <div>
             <div className={styles.home}>
                 <Head>
                     <title>CeladonAI | Personalised ChatGPT for your brand</title>
@@ -15,7 +24,8 @@ export default function Home() {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
 
-                <Navbar />
+                <Navbar/>
+                
                 <div className={styles.container}>
                     <div style={{
                         display: "flex",
@@ -26,7 +36,7 @@ export default function Home() {
                     }}>
 
                         <div className={styles.landingContent}>
-                            <h1 style={{ fontSize: 50 }}>Train and leverage <span style={{color: "black"}}>custom chatbots to boost productivity</span></h1>
+                            <h1 style={{ fontSize: 50 }} className={opensans.className}>Train and leverage <span style={{ color: "black" }}>custom chatbots to boost productivity</span></h1>
                         </div>
                         <div style={{
                             flex: 1,
@@ -35,11 +45,11 @@ export default function Home() {
                             padding: 50
                         }}>
                             <p>Start by uploading a file to train your chatbot</p>
-                            <UploadForm/>
+                            <UploadForm />
                         </div>
                     </div>
                 </div>
             </div>
-        </AuthContextProvider>
+        </div>
     )
 }

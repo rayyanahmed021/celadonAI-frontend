@@ -19,6 +19,9 @@ export default function Auth() {
             error = e;
         }
 
+		if (!error) {
+			window.location = "/";
+		}
         console.log({ result, error });
 	};
 
