@@ -1,0 +1,69 @@
+/* Navbar.module.css */
+
+.navbar {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.navBrand {
+    display: flex;
+    align-items: center;
+}
+
+.brandLogo {
+    width: 50px;
+    height: 50px;
+    margin-right: 0.5rem;
+}
+
+.brandName {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+}
+
+.navItem {
+    margin-right: 1rem;
+}
+
+.navLink {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navLink:hover {
+    text-decoration: underline;
+}
+
+.authButtons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    /* Pushes the buttons to the right */
+}
+
+.authButton {
+    background-color: transparent;
+    color: rgb(91, 66, 172);
+    border: 2px solid rgb(91, 66, 172);
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.authButton:hover {
+    background-color: rgb(45, 20, 125);
+    color: rgb(255, 255, 255);
+}
