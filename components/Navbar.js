@@ -25,9 +25,7 @@ const Navbar = () => {
         <nav className={styles.navbar}>
             <div className={styles.navBrand}>
                 <img src="/logo.png" alt="Logo" className={styles.brandLogo} />
-                <span className={styles.brandName}>CeladonAI <span style={{
-                    fontSize: 10
-                }}>V1</span></span>
+                <span className={styles.brandName}>CeladonAI</span>
             </div>
             <ul className={styles.navList}>
                 <li className={styles.navItem}>
@@ -36,8 +34,8 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li className={styles.navItem}>
-                    <Link href="/chat" className={styles.navLink}>
-                        Chat
+                    <Link href="/dashboard" className={styles.navLink}>
+                        Dashboard
                     </Link>
                 </li>
                 <li className={styles.navItem}>

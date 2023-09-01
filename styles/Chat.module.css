@@ -15,6 +15,12 @@
     border-bottom: 1px solid rgb(255, 255, 255);
 }
 
+@media only screen and (max-width: 800px) {
+    .top h3 {
+        font-size: 14px;
+    }
+}
+
 .messageContainer {
     display: flex;
     flex-direction: column;
@@ -24,6 +30,14 @@
     background-color: white;
     border-radius: 8px;
     max-width: 700px;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 800px) {
+    .messageContainer {
+        width: 100%;
+        border-radius: 0;
+    }
 }
 
 .messages {
@@ -31,12 +45,24 @@
     flex-direction: column;
     align-items: flex-start;
     overflow-y: scroll;
-    padding: 20px;
+    padding-bottom: 20px;
 }
 
 .message {
-    padding: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 660px;
 }
+
+.message:nth-child(even) {
+    background-color: rgb(255, 255, 255);
+    text-align: right;
+}
+
+.message:nth-child(odd) {
+    background-color: rgb(248, 248, 248);
+    text-align: left;
+}  
 
 .form {
     display: flex;
@@ -59,13 +85,28 @@
     outline: none;
 }
 
-.button {
+.input:focus {
+    outline: 1px solid rgb(83, 52, 182);
+    filter: drop-shadow(0 0 0.3rem rgb(198, 186, 232));
+}
+
+.button, .disabled {
     padding: 10px 20px;
     background-color: rgb(83, 52, 182);
     border: none;
     color: white;
     border-radius: 5px;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+    .input {
+        max-width: 225px;
+    }
+}
+
+.disabled {
+    opacity: 0.7;
 }
 
 .back {
@@ -77,4 +118,10 @@
     font-weight: bold;
     border-radius: 4px;
     margin: 0 20px;
+}
+
+@media only screen and (max-width: 800px) {
+    .back {
+        font-size: 12px;
+    }
 }
