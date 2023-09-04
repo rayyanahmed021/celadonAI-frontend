@@ -22,7 +22,7 @@ export default function UploadForm() {
                 const formData = new FormData();
                 formData.append("file", selectedFile);
                 
-                await fetch(`https://celadon-ai-flask-1194b43609af.herokuapp.com/${user.uid}`, {
+                await fetch(`https://celadon-ai-flask-1194b43609af.herokuapp.com/upload/${user.uid}`, {
                     method: 'POST',
                     body: formData
                 }).then(doc => {
