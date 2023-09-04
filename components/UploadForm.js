@@ -33,6 +33,7 @@ export default function UploadForm() {
                 });
             } else {
                 console.log('Please select a file.');
+                setLoading(false);
             }
         } else {
             window.location = "/auth/login";
