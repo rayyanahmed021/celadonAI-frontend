@@ -4,6 +4,18 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <meta charSet="utf-8" />
+        <link rel="icon" href="/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="rgb(83, 52, 182)" />
+        <meta
+          name="description"
+          content=""
+        />
+        <meta itemProp="name" content="CeladonAI | Personalised ChatGPT for your brand" />
+        <meta itemProp="url" content="https://www.celadonai.app/" />
+        <link rel="manifest" href="manifest.json" />
+        
         <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" crossorigin></script>
 
         <script
