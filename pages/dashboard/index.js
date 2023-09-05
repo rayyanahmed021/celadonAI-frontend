@@ -33,7 +33,7 @@ const Dashboard = () => {
     }, []);
 
     return (
-        <div>
+        <div style={{backgroundColor: "rgb(245, 245, 245)", minHeight: "100vh", width: "100%"}}>
             <Head>
                 <title>Dashboard | Personalised ChatGPT for your brand</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />

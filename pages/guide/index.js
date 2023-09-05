@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 
 export default function index() {
     return (
-        <div className={styles.guide}>
+        <div style={{backgroundColor: "rgb(245, 245, 245)", minHeight: "100vh", paddingBottom: 100, width: "100%"}}>
             <Head>
                 <title>Guide | Personalised ChatGPT for your brand</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
