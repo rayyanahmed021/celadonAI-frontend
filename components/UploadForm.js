@@ -1,16 +1,34 @@
 import React from 'react'
 import styles from '@/styles/Home.module.css'
+import JSZip from 'jszip';
 import { useEffect, useState } from 'react';
 import { useAuthContext } from "/utils/AuthContext";
+
+
 
 export default function UploadForm() {
     const { user } = useAuthContext()
     const [selectedFile, setSelectedFile] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    const handleFileUpload = (event) => {
+    const handleFileUpload =  async (event) => {
         const file = event.target.files[0];
-        setSelectedFile(file);
+        
+        //convert pptx to xml to extract # of slides
+        const zip = new JSZip();
+        await zip.loadAsync(file);
+
+        if (zip.files['ppt/presentation.xml']) {
+            const presentationXML = await zip.files['ppt/presentation.xml'].async('text');
+            const slideMatches = presentationXML.match(/p:sldId id=/g);
+            console.log(presentationXML, slideMatches)
+            if (slideMatches.length < 100){
+                setSelectedFile(file);
+            }
+            else{
+                alert("Choose files with less than 100 slides")
+            }
+        }
     };
 
     const handleSubmit = async event => {
@@ -21,7 +39,6 @@ export default function UploadForm() {
             if (selectedFile) {
                 const formData = new FormData();
                 formData.append("file", selectedFile);
-                
                 await fetch(`https://celadon-ai-flask-1194b43609af.herokuapp.com/upload/${user.uid}`, {
                     method: 'POST',
                     body: formData
@@ -32,7 +49,7 @@ export default function UploadForm() {
                     console.log(e);
                 });
             } else {
-                console.log('Please select a file.');
+                alert('Please select a file.');
                 setLoading(false);
             }
         } else {
